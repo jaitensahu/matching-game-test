@@ -5,8 +5,8 @@ import backImage from "../../assets/backImage.png";
 import { useNavigate } from "react-router-dom";
 import pinkCard from "../../assets/pinkCard.png";
 import blueCard from "../../assets/blueCard.png";
-import data from "./data.json";
-import alphabets from "./alphabet.json";
+import  data from "./data.json";
+import  alphabets from "./alphabet.json";
 import "./Play.css";
 import ShowMatchMsg from "../showMatchMessage/ShowMatchMsg";
 import ShowScore from "../ShowScoreComponent/ShowScore";
@@ -17,6 +17,8 @@ import { myContext, myContextData } from "../Context/Context";
 // Defining type of all the states
 
 const Play = () => {
+  console.log("data=", data);
+
   // Getting States From Context
   const {
     score,
@@ -49,6 +51,8 @@ const Play = () => {
   // Shuffle The Array Data whenever isShowScore gets updated
   useEffect(() => {
     let shuffledData = shuffleArray(data);
+    console.log(shuffledData);
+    
     let shuffledAlphabet = shuffleArray(alphabets);
     setFruitArr([...shuffledData]);
     setAlphabetArr([...shuffledAlphabet]);
